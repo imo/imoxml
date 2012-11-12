@@ -3022,10 +3022,10 @@ addBinding(XML_Parser parser, PREFIX *prefix, const ATTRIBUTE_ID *attId,
       && prefix->name[2] == XML_T('l')) {
 
     /* Not allowed to bind xmlns */
-    if (prefix->name[3] == XML_T('n')
+    /*if (prefix->name[3] == XML_T('n')
         && prefix->name[4] == XML_T('s')
         && prefix->name[5] == XML_T('\0'))
-      return XML_ERROR_RESERVED_PREFIX_XMLNS;
+      return XML_ERROR_RESERVED_PREFIX_XMLNS;*/
 
     if (prefix->name[3] == XML_T('\0'))
       mustBeXML = XML_TRUE;
@@ -3046,8 +3046,8 @@ addBinding(XML_Parser parser, PREFIX *prefix, const ATTRIBUTE_ID *attId,
     return mustBeXML ? XML_ERROR_RESERVED_PREFIX_XML
                      : XML_ERROR_RESERVED_NAMESPACE_URI;
 
-  if (isXMLNS)
-    return XML_ERROR_RESERVED_NAMESPACE_URI;
+  /*if (isXMLNS)
+    return XML_ERROR_RESERVED_NAMESPACE_URI;*/
 
   if (namespaceSeparator)
     len++;
