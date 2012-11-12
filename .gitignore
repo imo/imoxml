@@ -1,0 +1,4 @@
+build
+dist
+*.pyc
+imoxml.egg-info
