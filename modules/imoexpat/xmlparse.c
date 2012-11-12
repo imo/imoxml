@@ -2933,7 +2933,7 @@ storeAtts(XML_Parser parser, const ENCODING *enc,
   if (elementType->prefix) {
     binding = elementType->prefix->binding;
     if (!binding)
-      return XML_ERROR_UNBOUND_PREFIX;
+      return XML_ERROR_NONE; /* XML_ERROR_UNBOUND_PREFIX; */
     localPart = tagNamePtr->str;
     while (*localPart++ != XML_T(':'))
       ;
