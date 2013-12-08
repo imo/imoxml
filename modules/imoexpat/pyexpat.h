@@ -3,8 +3,8 @@
 
 /* note: you must import expat.h before importing this module! */
 
-#define PyExpat_CAPI_MAGIC  "_imoexpat.expat_CAPI 1.0"
-#define PyExpat_CAPSULE_NAME "_imoexpat.expat_CAPI"
+#define PyExpat_CAPI_MAGIC  "_imoexpat._imoexpat_CAPI 1.0"
+#define PyExpat_CAPSULE_NAME "_imoexpat._imoexpat_CAPI"
 
 struct PyExpat_CAPI
 {
