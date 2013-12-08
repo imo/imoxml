@@ -2994,7 +2994,7 @@ storeAtts(XML_Parser parser, const ENCODING *enc,
   if (elementType->prefix) {
     binding = elementType->prefix->binding;
     if (!binding)
-      return XML_ERROR_UNBOUND_PREFIX;
+      return XML_ERROR_NONE; /* XML_ERROR_UNBOUND_PREFIX; */
     localPart = tagNamePtr->str;
     while (*localPart++ != XML_T(ASCII_COLON))
       ;
@@ -3087,10 +3087,10 @@ addBinding(XML_Parser parser, PREFIX *prefix, const ATTRIBUTE_ID *attId,
       && prefix->name[2] == XML_T(ASCII_l)) {
 
     /* Not allowed to bind xmlns */
-    if (prefix->name[3] == XML_T(ASCII_n)
+    /*if (prefix->name[3] == XML_T(ASCII_n)
         && prefix->name[4] == XML_T(ASCII_s)
         && prefix->name[5] == XML_T('\0'))
-      return XML_ERROR_RESERVED_PREFIX_XMLNS;
+      return XML_ERROR_RESERVED_PREFIX_XMLNS;*/
 
     if (prefix->name[3] == XML_T('\0'))
       mustBeXML = XML_TRUE;
@@ -3111,8 +3111,8 @@ addBinding(XML_Parser parser, PREFIX *prefix, const ATTRIBUTE_ID *attId,
     return mustBeXML ? XML_ERROR_RESERVED_PREFIX_XML
                      : XML_ERROR_RESERVED_NAMESPACE_URI;
 
-  if (isXMLNS)
-    return XML_ERROR_RESERVED_NAMESPACE_URI;
+  /*if (isXMLNS)
+    return XML_ERROR_RESERVED_NAMESPACE_URI;*/
 
   if (namespaceSeparator)
     len++;

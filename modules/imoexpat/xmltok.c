@@ -1174,16 +1174,23 @@ static int FASTCALL
 checkCharRefNumber(int result)
 {
   switch (result >> 8) {
+  // surrogate pairs...
   case 0xD8: case 0xD9: case 0xDA: case 0xDB:
   case 0xDC: case 0xDD: case 0xDE: case 0xDF:
     return -1;
   case 0:
+  // non-unicode characters...
+/*
     if (latin1_encoding.type[result] == BT_NONXML)
       return -1;
+*/
     break;
   case 0xFF:
+  // not unheard of to have 0xFFFF... lets hope M$ doesn't do this to us.
+/*
     if (result == 0xFFFE || result == 0xFFFF)
       return -1;
+*/
     break;
   }
   return result;

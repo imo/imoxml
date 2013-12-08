@@ -6,4 +6,4 @@
     See the file LICENSE for copying permission.
 """
 
-from sleekxmpp.version import __version__, __version_info__
+from imoxml.version import __version__, __version_info__
